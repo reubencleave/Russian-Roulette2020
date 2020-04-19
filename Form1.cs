@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
+
 
 namespace Russian_Roulette
 {
@@ -15,12 +17,12 @@ namespace Russian_Roulette
     //todo create a counter that only holds 2 numbers so when someone shoots away it decreases by 2 or 1 or 0
     // they can only shoot away 2 times. Put this under a button
 
-        //todo we count down from 6 to the random number on a click Fire Event
-        //When the counter == the random number then the most important thing happens!
+    //todo we count down from 6 to the random number on a click Fire Event
+    //When the counter == the random number then the most important thing happens!
 
-        //if the person is shooting away from that click, they live.
+    //if the person is shooting away from that click, they live.
 
-        //otherwise if the person is not shooting away, they die.
+    //otherwise if the person is not shooting away, they die.
 
     // rnd          counter         shootaway only 2X
     //3             6               yes
@@ -31,21 +33,17 @@ namespace Russian_Roulette
     //3             3               no      <== you lose
     public partial class Form1 : Form
     {
-        GamePlay gamePlay = new GamePlay
+        GamePlay gamePlay = new GamePlay();
         int count = 6;
         int shootaway = 2;
 
         Boolean CanIshootaway = true;
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
+        
         private void btnFire_Click(object sender, EventArgs e)
         {
             //fire code
             count--;
-            pictureBox1.Image = Resource1.bow_and_arrow;
+            pbxBowandarrow.Image = Resource1.bow_and_arrow;
 
             //otherwise you will die
 
@@ -64,19 +62,20 @@ namespace Russian_Roulette
             btnFire.Text = count.ToString();
         }
 
-        private void btnshoot_Click(object sender, EventArgs e)
+        private void btnShoot_Click(object sender, EventArgs e)
         {
             //ShootAwayCountdown();
             gamePlay.ShootAwayCountdown();
-
-            pictureBox1.Image = Resource1.leftBowArrow;
+            int count = 6;
+            ShootAwayCountDown = 1;
+            pbxBowandarrow.Image = Resource1.leftBowArrow;
         }
 
         private void ShootAwayCountDown()
         {
             //shootaway button
             shootaway--;
-            
+
             if (shootaway > 0)
             {
                 //boolean you can shoot
@@ -87,6 +86,24 @@ namespace Russian_Roulette
                 //you can't shoot
                 CanIshootaway = false;
             }
+        }
+        
+        
+        soundPlayer player = new soundPlayer(Properties.Resources.Gunshot.wav);
+        player.Play();
+          
+        private void btnRepeat_Click(object sender, EventArgs e)
+        {
+            //Reset Shoot Score
+            shootaway Score = 0;
+
+
+        }
+        
+            
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            player.controls.play();
         }
     }
 }
