@@ -87,17 +87,20 @@ namespace Russian_Roulette
                 CanIshootaway = false;
             }
         }
-        
-        
-        soundPlayer player = new soundPlayer(Properties.Resources.Gunshot.wav);
-        player.Play();
-          
+
         private void btnRepeat_Click(object sender, EventArgs e)
         {
             //Reset Shoot Score
             shootaway Score = 0;
 
 
+        }
+        WindowsMediaPlayer player = new WindowsMediaPlayer();
+
+        public Form1()
+        {
+            InitializeComponent();
+            WindowsMediaPlayer.url = "Gunshot.mp3";
         }
         
             

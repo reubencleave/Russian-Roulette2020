@@ -1,6 +1,7 @@
 C:\Users\reube\source\repos\Russian Roulette\obj\Debug\Russian Roulette.csprojAssemblyReference.cache
+C:\Users\reube\source\repos\Russian Roulette\obj\Debug\Russian_Roulette.Form1.resources
+C:\Users\reube\source\repos\Russian Roulette\obj\Debug\Russian_Roulette.Properties.Resources.resources
+C:\Users\reube\source\repos\Russian Roulette\obj\Debug\Russian Roulette.csproj.GenerateResource.cache
 C:\Users\reube\source\repos\Russian Roulette\obj\Debug\Interop.WMPLib.dll
 C:\Users\reube\source\repos\Russian Roulette\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\reube\source\repos\Russian Roulette\obj\Debug\Russian Roulette.csproj.ResolveComReference.cache
-C:\Users\reube\source\repos\Russian Roulette\obj\Debug\Russian_Roulette.Form1.resources
-C:\Users\reube\source\repos\Russian Roulette\obj\Debug\Russian Roulette.csproj.GenerateResource.cache
